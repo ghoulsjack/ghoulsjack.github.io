@@ -1,0 +1,27 @@
+.page-top.animated
+  .nav
+    each link, menu_name in theme.menu
+      li 
+        if is_current(link)
+          a.current(href= url_for(link))= __(menu_name)
+        else
+          a(href= url_for(link))= __(menu_name)
+
+
+  .information
+    .nav_right_btn
+      if theme.rightbtn.back
+        li
+          if is_post()
+            a.fa.fa-chevron-left(onclick="window.history.go(-1)") 
+          else
+            a.fa.fa-chevron-left(onclick="window.history.go(-1)" style="display:none;") 
+      if theme.rightbtn.search
+        li
+          a.fa.fa-search(onclick="openWindow();")
+      if theme.rightbtn.darkLightToggle
+        li
+          a.fa.fa-sun-o(onclick="darkLightToggle();")
+    .avatar
+      if theme.rightbtn.avatar
+        img(src=url_for(theme.avatar))

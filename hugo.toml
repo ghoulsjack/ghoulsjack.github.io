@@ -1,0 +1,4 @@
+baseURL = 'https://ghoulsjack.github.io/'
+languageCode = 'zh-tw'
+title = 'My page'
+theme = 'ananke'
